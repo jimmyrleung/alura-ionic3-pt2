@@ -21,11 +21,14 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/of';
 import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento-dao';
+import { LoginPage } from '../pages/login/login';
+import { UsuariosServiceProvider } from '../providers/usuarios-service/usuarios-service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    LoginPage
     //EscolhaPage -> Será carregado por lazy loading
   ],
   imports: [
@@ -42,6 +45,7 @@ import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento
   entryComponents: [ // Componentes que queremos navegar
     MyApp,
     HomePage,
+    LoginPage
     //EscolhaPage -> Será carregado por lazy loading
   ],
   providers: [
@@ -50,7 +54,8 @@ import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     CarrosServiceProvider,
     AgendamentosServiceProvider,
-    AgendamentoDaoProvider // adicionado automaticamente pelo ionic cli,
+    AgendamentoDaoProvider,
+    UsuariosServiceProvider // adicionado automaticamente pelo ionic cli,
   ]
 })
 export class AppModule { }

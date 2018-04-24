@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListaAgendamentosPage } from '../pages/lista-agendamentos/lista-agendamentos';
+import { LoginPage } from '../pages/login/login';
 @Component({
   selector: 'myapp',
   templateUrl: 'app.html'
@@ -14,7 +15,7 @@ export class MyApp {
   @ViewChild(Nav)
   public nav: Nav;
 
-  rootPage: any = HomePage; // set HomePage as root page
+  rootPage: any = LoginPage; // set HomePage as root page
   public paginas = [
     { titulo: 'Agendamentos', componente: ListaAgendamentosPage.name, icone: 'calendar' }
   ];
