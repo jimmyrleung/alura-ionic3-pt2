@@ -1,0 +1,59 @@
+﻿- instalar o ionic globalmente:
+
+npm install -g ionic@3.16.0	cordova@7.0.1 --save-exact
+
+- Criando um projeto
+ionic start meuProjeto blank
+*blank é o projeto do zero sem nenhum layout pré definido
+
+- Iniciar o projeto em modo laboratório
+ionic serve --lab
+
+Recomendações:
+- Instalar o ionic cli de forma global para q ele possa ser utilizado em qualquer pasta do SO
+- Utilizar a flag -lab ou -l para que possamos ver a aplicação em android, iOS e Windows Phone
+
+Ionic v2/v3: Baseado no angular 2+ 
+-> Na pasta app temos a estrutura do angular (module, component) para nosso aplicativo
+
+<ion-navbar> exibe o famoso "back button" 
+<ion-header> cabeçalho de uma página/tela. É um componente root e por isso não pode vir dentro de outro componente
+
+Http e HttpClient: a partir do angular 4.3 o HttpClient foi simplificado para termos o trabalho de mapear na mão uma resposta
+
+// antes da v4.3
+this._http
+            .get('http://enderecoqualquer.com.br')
+            .map(resultado => resultado.json())
+            .subscribe(dados => {
+                //processamento da informação obtida
+
+// após a v4.3 
+this._http
+            .get('http://enderecoqualquer.com.br')
+            .subscribe(dados => {
+                //processamento da informação obtida
+            })
+
+
+// Gerar um provider pelo ionic cli
+ionic g provider carros.service
+-> Gera dentro da pasta 'providers' uma pasta chamada carros-service com uma classe chamada carros-service.ts com o decorator injectable, etc
+            })
+-> Também adiciona o novo provider na lista de providers do appmodule
+
+Ionic - Navigating Lifecycle
+https://blog.ionicframework.com/navigating-lifecycle-events/
+
+
+IndexedDB: Banco de dados dos navegadores, cobertos pela especificação da W3C
+- Salva objetos em formato JSON
+
+Ionic Storage: O ionic nos oferece um serviço chamado storage que serve de interface entre o desenvolvedor e 
+qualquer banco de dados (de acordo com a configuração passada)
+- O Ionic storage deve ser importado como um module (IonicStorageModule)
+
+Ao gerar uma nova página pelo IONIC CLI com o comando ionic g page NomeDoComponenteDePagina o Ionic não executa
+um passo importante: a forma como o componente será carregado, portanto, precisamos faze-lo manualmente:
+- Se não for carregado por lazy-loading, devemos adicioná-lo em declarations e em entryComponents
+- Se for utilizar o lazy loading, precisamos adicionar a página criada no exports do módulo específico (arquivo .module.ts)
