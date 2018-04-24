@@ -26,7 +26,17 @@ export class AgendamentoDaoProvider {
       .then((data) => {
         return !!data;
       });
-      
+
+    return Observable.fromPromise(promise);
+  }
+
+  listaTodos() {
+    let agendamentos: Array<Agendamento> = [];
+
+    let promise = this._storage.forEach((agendamento: Agendamento) => {
+      agendamentos.push(agendamento);
+    }).then(() => agendamentos);
+
     return Observable.fromPromise(promise);
   }
 
