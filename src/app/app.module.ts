@@ -27,6 +27,7 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { Vibration } from '@ionic-native/vibration';
 import { DatePicker } from '@ionic-native/date-picker';
 import { Camera } from '@ionic-native/camera';
+import { OneSignal } from '@ionic-native/onesignal';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { Camera } from '@ionic-native/camera';
     HttpServiceProvider, // adicionado automaticamente pelo ionic cli,
     Vibration,
     DatePicker,
-    Camera
+    Camera,
+    OneSignal
   ]
 })
 export class AppModule { }
