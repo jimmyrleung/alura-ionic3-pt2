@@ -1,0 +1,8 @@
+﻿Para acessar recursos nativos do device precisamos instalar os plugins através do cordova
+
+comando: ionic cordova plugin add nomePlugin --save
+exemplo: ionic cordova plugin add cordova-plugin-vibration
+
+Em sguida precisamos instalar as dependências relacionadas ao ionic-native:
+comando: npm install @ionic-native/plugin --save
+exemplo: npm install @ionic-native/vibration --save

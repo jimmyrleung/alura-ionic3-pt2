@@ -24,6 +24,8 @@ import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento
 import { LoginPage } from '../pages/login/login';
 import { UsuariosServiceProvider } from '../providers/usuarios-service/usuarios-service';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
+import { Vibration } from '@ionic-native/vibration';
+import { DatePicker } from '@ionic-native/date-picker';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
     AgendamentosServiceProvider,
     AgendamentoDaoProvider,
     UsuariosServiceProvider,
-    HttpServiceProvider // adicionado automaticamente pelo ionic cli,
+    HttpServiceProvider, // adicionado automaticamente pelo ionic cli,
+    Vibration,
+    DatePicker
   ]
 })
 export class AppModule { }
