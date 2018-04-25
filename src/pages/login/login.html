@@ -1,23 +1,22 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-  <form (ngSubmit)="efetuarLogin()" #formulario="ngForm">
-    <ion-item>
-      <ion-label stacked>Email:</ion-label>
-      <ion-input [(ngModel)]="email" type="text" name="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Senha:</ion-label>
-      <ion-input [(ngModel)]="senha" type="password" name="senha"></ion-input>
-    </ion-item>
-    <button ion-button block type="submit">Login</button>
-  </form>
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Aluracar
+    </div>
+  </div>
+  <div padding>
+    <form (ngSubmit)="efetuarLogin()" #formulario="ngForm">
+      <ion-item>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input [(ngModel)]="email" type="text" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Senha:</ion-label>
+        <ion-input [(ngModel)]="senha" type="password" name="senha"></ion-input>
+      </ion-item>
+      <button ion-button block type="submit" class="login">Login</button>
+    </form>
+  </div>
 </ion-content>
