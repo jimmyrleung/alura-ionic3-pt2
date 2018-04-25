@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Carro } from '../../models/carro';
+import { HttpServiceProvider } from '../http-service/http-service';
 
 /*
   Generated class for the CarrosServiceProvider provider.
@@ -11,13 +12,13 @@ import { Carro } from '../../models/carro';
 */
 @Injectable()
 export class CarrosServiceProvider {
-  
-  constructor(private _http: HttpClient) {
+
+  constructor(private _http: HttpClient, private _httpService: HttpServiceProvider) {
 
   }
 
   lista() {
-    return this._http.get<Array<Carro>>("http://localhost:8080/api/carro/listaTodos")
+    return this._http.get<Array<Carro>>(this._httpService.url + "/api/carro/listaTodos")
   }
 
 }

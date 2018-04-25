@@ -3,6 +3,7 @@ import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Agendamento } from '../../models/agendamento';
+import { HttpServiceProvider } from '../http-service/http-service';
 
 /*
   Generated class for the AgendamentosServiceProvider provider.
@@ -12,15 +13,13 @@ import { Agendamento } from '../../models/agendamento';
 */
 @Injectable()
 export class AgendamentosServiceProvider {
-  private _url = "http://localhost:8080/api/agendamento/agenda";
-
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private _httpService: HttpServiceProvider) {
 
   }
 
   agenda(agendamento: Agendamento) {
     return this._http
-      .post(this._url, agendamento)
+      .post(this._httpService.url + "/api/agendamento/agenda", agendamento)
 
       // deve ser habilitado no rxjs
       .do(() => agendamento.enviado = true)

@@ -23,6 +23,7 @@ import 'rxjs/add/observable/of';
 import { AgendamentoDaoProvider } from '../providers/agendamento-dao/agendamento-dao';
 import { LoginPage } from '../pages/login/login';
 import { UsuariosServiceProvider } from '../providers/usuarios-service/usuarios-service';
+import { HttpServiceProvider } from '../providers/http-service/http-service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { UsuariosServiceProvider } from '../providers/usuarios-service/usuarios-
     CarrosServiceProvider,
     AgendamentosServiceProvider,
     AgendamentoDaoProvider,
-    UsuariosServiceProvider // adicionado automaticamente pelo ionic cli,
+    UsuariosServiceProvider,
+    HttpServiceProvider // adicionado automaticamente pelo ionic cli,
   ]
 })
 export class AppModule { }
