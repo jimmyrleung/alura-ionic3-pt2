@@ -6,3 +6,17 @@ exemplo: ionic cordova plugin add cordova-plugin-vibration
 Em sguida precisamos instalar as dependências relacionadas ao ionic-native:
 comando: npm install @ionic-native/plugin --save
 exemplo: npm install @ionic-native/vibration --save
+
+
+O Ionic DevApp nao cobre alguns acessos a recursos nativos ou então o acesso não é tão bem feito,
+portanto, nesses casos o ideal é gerar um build
+
+Build
+
+Primeiramente, precisamos adicionar a plataforma: ionic cordova platform add android/ios
+A execução deste comando irá gerar uma pasta chamada "platforms" com a pasta "android" ou "ios" dentro
+
+Em seguida, solicitarmos o build: ionic cordova build android/ios
+
+Para rodar um aplicativo direto num emulador ou num dispositivo conectado
+basta executar comando ionic cordova run android

@@ -34,6 +34,10 @@ export class MyApp {
     });
   }
 
+  get avatar() {
+    return this._usuariosService.obtemAvatar();
+  }
+
   navTo(componente) {
     this.nav.push(componente);
   }
