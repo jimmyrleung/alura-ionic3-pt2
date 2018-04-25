@@ -1,5 +1,6 @@
 <ion-split-pane>
     <!-- só mostra o menu se houver um usuarioLogado -->
+    <!-- o enabled apenas habilita/desabilita, enquanto que o ngIf coloca ou tira do DOM-->
     <ion-menu [content]="conteudo" *ngIf="usuarioLogado">
         <ion-content>
             <ion-item id="cabecalho-menu" class="cabecalho-menu">
