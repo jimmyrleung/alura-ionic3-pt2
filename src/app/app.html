@@ -1,5 +1,6 @@
 <ion-split-pane>
-    <ion-menu [content]="conteudo">
+    <!-- só mostra o menu se houver um usuarioLogado -->
+    <ion-menu [content]="conteudo" *ngIf="usuarioLogado">
         <ion-content>
             <ion-item id="cabecalho-menu" class="cabecalho-menu">
                 <div>
@@ -7,8 +8,8 @@
                         <img src="assets/imgs/avatar-profile.jpg">
                     </ion-avatar>
                 </div>
-                <h2>Jimmy Leung</h2>
-                <p>jimmy@aluracar.com</p>
+                <h2>{{usuarioLogado.nome}}</h2>
+                <p>{{usuarioLogado.email}}</p>
             </ion-item>
 
             <ion-list>
