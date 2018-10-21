@@ -31,6 +31,17 @@ export class ListaAgendamentosPage implements NavLifecycles {
         })
   }
 
+  ionViewDidEnter() {
+    setTimeout(() => this.atualizaAgendamentos(), 3500);
+  }
+
+  atualizaAgendamentos() {
+    this.agendamentos.filter((ag: Agendamento) => ag.confirmado)
+      .forEach((agConfirmado: Agendamento) => {
+        agConfirmado.visualizado = true; this._agendamentoDAO.salvar(agConfirmado)
+      })
+  }
+
   reenvia(agendamento: Agendamento) {
     this._alerta = this._alertCtrl.create({
       buttons: [{

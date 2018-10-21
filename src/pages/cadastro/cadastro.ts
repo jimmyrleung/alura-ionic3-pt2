@@ -61,7 +61,8 @@ export class CadastroPage {
       precoTotal: this.preco,
       confirmado: false,
       enviado: false,
-      data: this.data
+      data: this.data,
+      visualizado: false
     };
 
     // Precisamos colocar a criação do alerta aqui para que o alerta seja recriado
